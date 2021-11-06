@@ -52,10 +52,28 @@ cointest25 = np.random.binomial(n = 10, p = 0.25, size = 100000)
 cointest50 = np.random.binomial(n = 10, p = 0.50, size = 100000)
 cointest75 = np.random.binomial(n = 10, p = 0.75, size = 100000)
 cointest100 = np.random.binomial(n = 10, p = 1, size = 100000)
-sns.histplot(cointest25, ax = ax1)
-sns.histplot(cointest50, ax = ax2)
-sns.histplot(cointest75, ax = ax3)
-sns.histplot(cointest100, ax = ax4)
+sns.histplot(cointest25, ax = ax1, color = '#e63946')
+sns.histplot(cointest50, ax = ax2, color = '#f1faee')
+sns.histplot(cointest75, ax = ax3, color = '#a8dadc')
+sns.histplot(cointest100, ax = ax4, color = '#457b9d')
 plt.tight_layout()
 plt.savefig("binomial distribution.png")
 plt.close()
+
+
+def permutation_array (r):
+    arr = np.arange(r)
+    print(random.permutation(arr))
+    return arr
+
+arr = permutation_array(30)
+print(arr)
+
+def shuffle_array (a):
+    random.shuffle(a)
+    return a
+
+newarr = shuffle_array(a = arr)
+print(newarr)
+
+
