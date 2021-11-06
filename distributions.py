@@ -41,6 +41,21 @@ ax3.set_title("10000 Samples")
 ax4.hist(uniformdist100000, color = '#C6D4FF')
 ax4.set_title("100000 Samples")
 plt.tight_layout()
-plt.show()
 plt.savefig("uniform distribution.png")
+plt.close()
+
+#Binomial Distribution
+#Simulating one Coin Toss done 100000 times
+#Changing Probability to see effect on distribution
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
+cointest25 = np.random.binomial(n = 10, p = 0.25, size = 100000)
+cointest50 = np.random.binomial(n = 10, p = 0.50, size = 100000)
+cointest75 = np.random.binomial(n = 10, p = 0.75, size = 100000)
+cointest100 = np.random.binomial(n = 10, p = 1, size = 100000)
+sns.histplot(cointest25, ax = ax1)
+sns.histplot(cointest50, ax = ax2)
+sns.histplot(cointest75, ax = ax3)
+sns.histplot(cointest100, ax = ax4)
+plt.tight_layout()
+plt.savefig("binomial distribution.png")
 plt.close()
