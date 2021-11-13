@@ -61,6 +61,10 @@ plt.savefig("binomial distribution.png")
 plt.close()
 
 
+#Part two of assignment - permuations
+#Showing difference between shuffle and permuations
+#Shuffle changes original array but permuation returns new array without altering existing one
+
 def permutation_array (r):
     arr = np.arange(r)
     print(random.permutation(arr))
