@@ -104,4 +104,26 @@ def shuffle_array (a):
 newarr = shuffle_array(a = arr)
 print(newarr)
 
+weibull01 = np.random.weibull(a = 0.1, size = 100)
+weibull1 = np.random.weibull(a = 1.0, size = 100)
+weibull2 = np.random.weibull(a = 2.0, size = 100)
+weibull3 = np.random.weibull(a = 3.0, size = 100)
+
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
+sns.despine()
+plt.suptitle("Weibull Distribution - Effect of Increasing Scale")
+ax1.set_title("Scale = 0.1", fontsize = 8)
+ax2.set_title("Scale = 1.0", fontsize = 8)
+ax3.set_title("Scale = 2.0", fontsize = 8)
+ax4.set_title("Scale = 3.0", fontsize = 8)
+sns.histplot(weibull01, ax = ax1, color = '#5BC0EB', kde = True)
+sns.histplot(weibull1, ax = ax2, color = '#FDE74C', kde = True)
+sns.histplot(weibull2, ax = ax3, color = '#9BC53D', kde = True)
+sns.histplot(weibull3, ax = ax4, color = '#C3423F', kde = True)
+plt.tight_layout()
+plt.savefig("weibull distribution.png")
+plt.show()
+plt.close()
+
+
 
